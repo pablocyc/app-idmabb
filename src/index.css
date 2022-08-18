@@ -1,0 +1,106 @@
+@import "satoshi.css";
+
+:root {
+  --bg-color: #fbf8f3;
+  --card-color: #f2f4f6;
+  --text-color: #232323;
+  --button-color: #000;
+  --primary-color: #9f7de1;
+  --accent-color: #12b76a;
+  --transition: color 0.2s, background-image 0.7s ease-in-out;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+  font-family: Satoshi-Variable, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82px;
+  border-bottom: 1px solid var(--text-color);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn-install {
+  user-select: none;
+  cursor: pointer;
+  border: 3px solid;
+  border-image:
+    linear-gradient(-90deg, #ff9100 0%, #f10366 50%, #6173ff 100%)
+    0 0 1 0;
+  padding: 0 0.4rem;
+  width: auto;
+}
+
+button {
+  border-style: none;
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+
+.app-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.main {
+  width: 88%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0;
+  margin-top: 0.2rem;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.buttons {
+  margin: 1.5rem 0;
+}
+
+.btn {
+  border: 1.2px solid var(--button-color);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.btn-add {
+  background-color: var(--button-color);
+  color: var(--bg-color);
+  border-color: var(--button-color);
+  margin-left: 0.5rem;
+}
+
+.modal-show {
+  transform: scale(1);
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
