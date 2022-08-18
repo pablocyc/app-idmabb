@@ -1,0 +1,23 @@
+/**
+ * @license
+ *
+ * Font Family: Satoshi
+ * Designed by: Deni Anggara
+ * URL: https://www.fontshare.com/fonts/satoshi
+ * © 2022 Indian Type Foundry
+ *
+ * Font Styles:
+ * Satoshi Variable(Variable font)
+ * Satoshi Variable Italic(Variable font)
+ * Satoshi Light
+ * Satoshi Light Italic
+ * Satoshi Regular
+ * Satoshi Italic
+ * Satoshi Medium
+ * Satoshi Medium Italic
+ * Satoshi Bold
+ * Satoshi Bold Italic
+ * Satoshi Black
+ * Satoshi Black Italic
+ *
+*/@font-face{font-family:Satoshi-Variable;src:url(../fonts/Satoshi-Variable.woff2) format("woff2"),url(../fonts/Satoshi-Variable.woff) format("woff"),url(../fonts/Satoshi-Variable.ttf) format("truetype");font-weight:300 900;font-display:swap;font-style:normal}@font-face{font-family:Satoshi-Regular;src:url(../fonts/Satoshi-Regular.woff2) format("woff2"),url(../fonts/Satoshi-Regular.woff) format("woff"),url(../fonts/Satoshi-Regular.ttf) format("truetype");font-weight:400;font-display:swap;font-style:normal}@font-face{font-family:Satoshi-Medium;src:url(../fonts/Satoshi-Medium.woff2) format("woff2"),url(../fonts/Satoshi-Medium.woff) format("woff"),url(../fonts/Satoshi-Medium.ttf) format("truetype");font-weight:500;font-display:swap;font-style:normal}@font-face{font-family:Satoshi-Bold;src:url(../fonts/Satoshi-Bold.woff2) format("woff2"),url(../fonts/Satoshi-Bold.woff) format("woff"),url(../fonts/Satoshi-Bold.ttf) format("truetype");font-weight:700;font-display:swap;font-style:normal}@font-face{font-family:Satoshi-Black;src:url(../fonts/Satoshi-Black.woff2) format("woff2"),url(../fonts/Satoshi-Black.woff) format("woff"),url(../fonts/Satoshi-Black.ttf) format("truetype");font-weight:900;font-display:swap;font-style:normal}:root{--bg-color: #fbf8f3;--card-color: #f2f4f6;--text-color: #232323;--button-color: #000;--primary-color: #9f7de1;--accent-color: #12b76a;--transition: color .2s, background-image .7s ease-in-out}body{margin:0;background-color:var(--bg-color);color:var(--text-color);transition:var(--transition);font-family:Satoshi-Variable,sans-serif}.header{display:flex;justify-content:space-between;align-items:center;height:82px;border-bottom:1px solid var(--text-color);margin:0 auto;padding:0 24px}.btn-install{user-select:none;cursor:pointer;border:3px solid;border-image:linear-gradient(-90deg,#ff9100 0%,#f10366 50%,#6173ff 100%) 0 0 1 0;padding:0 .4rem;width:auto}button{border-style:none;background-color:var(--bg-color);cursor:pointer}.app-title{margin:0;font-weight:900;font-size:18px;display:inline-block;margin-left:.5rem}.main{width:88%;margin:0 auto;margin-top:1.5rem}.welcome-title{margin:0;font-size:17px;font-weight:700}.description{margin:0;margin-top:.2rem;font-size:13px;font-weight:400}.buttons{margin:1.5rem 0}.btn{border:1.2px solid var(--button-color);padding:.8rem 2rem;border-radius:8px;font-size:1rem;font-weight:400;text-align:center}.btn-add{background-color:var(--button-color);color:var(--bg-color);border-color:var(--button-color);margin-left:.5rem}.modal-show{transform:scale(1)}.container-cards{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2rem}
