@@ -54,6 +54,11 @@ class FilterParameter extends HTMLElement {
         background-color: var(--text-color);
         color: var(--card-color);
       }
+
+      .disable {
+        opacity: 0.5;
+        cursor: none;
+      }
     `;
   }
 

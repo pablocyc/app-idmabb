@@ -9,17 +9,17 @@ class ModalMenu extends HTMLElement {
   }
 
   handleEvent(event) {
-    const path = event.path[0];
+    const path = event.composedPath();
     if (event.type === "click") {
-      if (path.classList.contains("modal-show") || path.classList.contains("btn-close")) {
+      if (path[0].className === "modal-show" || path[0].className === "btn-close") {
         this.classList.remove("modal-show");
         this.filters.forEach(filter => filter.unSave(this.filterSelected));
         this.filterSelected = [];
       }
-      if (path.classList.contains("clear")) {
+      if (path[0].classList.contains("clear")) {
         this.filters.forEach(filter => filter.clear());
       }
-      if (path.classList.contains("apply")) {
+      if (path[0].classList.contains("apply")) {
         this.classList.remove("modal-show");
         const applyEvent = new CustomEvent("apply", {
           detail: { title: this.titleFilter, filters: this.filterSelected },
@@ -154,7 +154,8 @@ class ModalMenu extends HTMLElement {
       <div class="container-params">
         <filter-parameter
           title="Tensión"
-          params="L1-Neutro, L2-Neutro, L3-Neutro, L1 - L2, L2 - L3, L3 - L1">
+          params="L1-Neutro, L2-Neutro, L3-Neutro, L1 - L2, L2 - L3, L3 - L1"
+          ids="Volt_L1-N, Volt_L2-N, Volt_L3-N, Volt_L1-L2, Volt_L2-L3, Volt_L3-L1">
         </filter-parameter>
         <filter-parameter
           title="Corriente"

@@ -4,9 +4,12 @@
   --bg-color: #fbf8f3;
   --card-color: #f2f4f6;
   --text-color: #232323;
+  --border-color: #23232355;
   --button-color: #000;
-  --primary-color: #9f7de1;
+  --primary-color: #7f56d9;
   --accent-color: #12b76a;
+  --disable-color: #98a2b3;
+  --error-color: #d92d20;
   --transition: color 0.2s, background-image 0.7s ease-in-out;
 }
 
@@ -26,6 +29,11 @@ body {
   border-bottom: 1px solid var(--text-color);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
 }
 
 .btn-install {
@@ -57,6 +65,7 @@ button {
   width: 88%;
   margin: 0 auto;
   margin-top: 1.5rem;
+  position: relative;
 }
 
 .welcome-title {
@@ -94,6 +103,10 @@ button {
 
 .modal-show {
   transform: scale(1);
+}
+
+.menu-show {
+  transform: translateX(0);
 }
 
 .container-cards {
