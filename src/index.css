@@ -5,10 +5,11 @@
   --card-color: #f2f4f6;
   --text-color: #232323;
   --border-color: #23232355;
-  --button-color: #000;
+  --button-color: #111924;
   --primary-color: #7f56d9;
   --accent-color: #12b76a;
   --disable-color: #98a2b3;
+  --gray-color: #d0d5dd;
   --error-color: #d92d20;
   --transition: color 0.2s, background-image 0.7s ease-in-out;
 }
@@ -62,8 +63,7 @@ button {
 }
 
 .main {
-  width: 88%;
-  margin: 0 auto;
+  margin: 0 24px;
   margin-top: 1.5rem;
   position: relative;
 }

@@ -4,8 +4,9 @@ class ModalMenu extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.filterSelected = [];
     this.titleFilter = [];
+    this.filterSelected = [];
+    this.idsSelected = [];
   }
 
   handleEvent(event) {
@@ -22,19 +23,25 @@ class ModalMenu extends HTMLElement {
       if (path[0].classList.contains("apply")) {
         this.classList.remove("modal-show");
         const applyEvent = new CustomEvent("apply", {
-          detail: { title: this.titleFilter, filters: this.filterSelected },
+          detail: {
+            title: this.titleFilter,
+            filters: this.filterSelected,
+            id: this.idsSelected
+          },
           bubbles: true,
           composed: true
         });
         this.dispatchEvent(applyEvent);
         this.filterSelected = [];
         this.titleFilter = [];
+        this.idsSelected = [];
       }
     }
 
     if (event.type === "filter") {
-      this.filterSelected.push(event.detail.message);
       this.titleFilter.push(event.detail.title);
+      this.filterSelected.push(event.detail.message);
+      this.idsSelected.push(event.detail.id);
     }
   }
 
@@ -45,7 +52,7 @@ class ModalMenu extends HTMLElement {
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,7 +64,8 @@ class ModalMenu extends HTMLElement {
       .container {
         background-color: var(--card-color);
         width: 85vw;
-        height: 80vh;
+        height: 75vh;
+        top: -4rem;
         position: relative;
         overflow-y: scroll;
       }
@@ -101,10 +109,13 @@ class ModalMenu extends HTMLElement {
 
       .footer {
         display: flex;
+        background-color: var(--button-color);
+        position: fixed;
+        bottom: 7.1rem;
+        width: 85vw;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid var(--text-color);
-        width: 100%;
         padding: 0.2rem 0;
       }
 
@@ -119,16 +130,13 @@ class ModalMenu extends HTMLElement {
       .clear {
         margin-left: 1.5rem;
         border: none;
+        color: var(--card-color);
       }
 
       .apply {
         margin-right: 1.5rem;
-        background-color: var(--text-color);
         color: var(--card-color);
-      }
-
-      filter-parameter {
-        border-bottom: 1px solid var(--text-color);
+        border: 1px solid var(--card-color);
       }
     `;
   }
@@ -155,23 +163,27 @@ class ModalMenu extends HTMLElement {
         <filter-parameter
           title="Tensión"
           params="L1-Neutro, L2-Neutro, L3-Neutro, L1 - L2, L2 - L3, L3 - L1"
-          ids="Volt_L1-N, Volt_L2-N, Volt_L3-N, Volt_L1-L2, Volt_L2-L3, Volt_L3-L1">
+          ids="Volt_L1-N,Volt_L2-N,Volt_L3-N,Volt_L1-L2,Volt_L2-L3,Volt_L3-L1">
         </filter-parameter>
         <filter-parameter
           title="Corriente"
-          params="I1, I2, I3, I1 + I2 + I3">
+          params="I1, I2, I3, I1 + I2 + I3"
+          ids="I_1,I_2,I_3,I_Total">
         </filter-parameter>
         <filter-parameter
           title="Potencia"
-          params="P1 - Activa, P2 - Activa, P3 - Activa, PT - Activa Total, Q1 - Reactiva, Q2 - Reactiva, Q3 - Reactiva, QT - Reactiva Total, S1 - Aparente, S2 - Aparente, S3 - Aparente, ST - Aparente Total">
+          params="P1 - Activa, P2 - Activa, P3 - Activa, PT - Activa Total, Q1 - Reactiva, Q2 - Reactiva, Q3 - Reactiva, QT - Reactiva Total, S1 - Aparente, S2 - Aparente, S3 - Aparente, ST - Aparente Total"
+          ids="P_1,P_2,P_3,P_Total,Q_1,Q_2,Q_3,Q_Total,S_1,S_2,S_3,S_Total">
         </filter-parameter>
         <filter-parameter
           title="Factor de Potencia"
-          params="FP 1, FP 2, FP 3, FPT Total">
+          params="FP 1, FP 2, FP 3, FPT Total"
+          ids="FP_1,FP_2,FP_3,FP_Total">
         </filter-parameter>
         <filter-parameter
           title="Frecuencia"
-          params="Frecuencia-1">
+          params="Frecuencia-1"
+          ids="Frecuency">
         </filter-parameter>
       </div>
       <footer class="footer">

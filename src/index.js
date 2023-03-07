@@ -29,12 +29,6 @@ btnMenu.addEventListener("click", () => {
 document.addEventListener("apply", e => setCards(e));
 document.addEventListener("login", e => menuLogin(e));
 
-function getValue(data) {
-  const nominalValue = 250;
-  const nominal = 16384;
-  return nominalValue * data / nominal;
-}
-
 function setCards(e) {
   let flagCreateCard = true;
   e.detail.filters.forEach((item, index) => {
@@ -49,11 +43,11 @@ function setCards(e) {
       card.setAttribute("title", e.detail.title[index]);
       card.setAttribute("parameter", item);
       card.setAttribute("value", "0");
+      card.setAttribute("id", e.detail.id[index]);
       container.appendChild(card);
-      getIdm("Volt_L1-N")
+      getIdm(e.detail.id[index])
         .then((snapshot) => {
-          const value = getValue(snapshot.data().current).toFixed(1);
-          card.setValue(value);
+          card.setValue(snapshot.data());
         })
       flagCreateCard = true;
     }
@@ -76,26 +70,18 @@ function menuLogin(e) {
 
 statusAuth(auth, user => {
   if (user) {
-    console.log("user loged...");
+    console.log("user logged...");
     navMenu.statusAuth(true);
     welcome.innerText = `Welcome back, ${user.displayName}`;
     onGetIdms(snapshot => {
       const cards = container.querySelectorAll("card-parameter");
       snapshot.forEach( doc => {
         cards.forEach( card => {
-          if (card.parameter === "L1-Neutro") {
-            if (doc.id === "Volt_L1-N") {
-              const value = getValue(doc.data().current).toFixed(1);
-              card.setValue(value);
-            }
+          if (card.id === doc.id) {
+            card.setValue(doc.data(), doc.id);
           }
         });
-      })
-      // const len = snapshot.docs.length;
-      // const last = snapshot.docs[len - 1];
-      // console.log(snapshot.docs[3].data().current);
-      // card.setValue(getValue(last.data().Value));
-      // welcome.innerText = `Welcome!, (${getValue(snapshot.docs[3].data().current).toFixed(1)})`;
+      });
     });
   } else {
     navMenu.statusAuth(false);

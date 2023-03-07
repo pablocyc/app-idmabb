@@ -5,11 +5,15 @@ class FilterParameter extends HTMLElement {
   }
 
   handleEvent(event) {
-    const classList = event.target.classList;
-    if (classList.contains("btn")) {
-      classList.toggle("active");
+    const path = event.composedPath();
+    if (path[0].classList.contains("btn")) {
+      path[0].classList.toggle("active");
       const filterEvent = new CustomEvent("filter", {
-        detail: { title: this.title, message: event.path[0].innerText },
+        detail: {
+          title: this.title,
+          message: event.path[0].innerText,
+          id: path[0].id
+        },
         bubbles: true,
         composed: true
       });
@@ -65,6 +69,7 @@ class FilterParameter extends HTMLElement {
   connectedCallback() {
     this.title = this.getAttribute("title") || "-";
     this.params = this.getAttribute("params").split(",");
+    this.ids = this.getAttribute("ids").split(",");
     this.render();
     this.btns = this.shadowRoot.querySelectorAll(".btn");
     this.shadowRoot.querySelector(".buttons").addEventListener("click", this);
@@ -82,8 +87,8 @@ class FilterParameter extends HTMLElement {
 
   getButtons(values) {
     let html = "";
-    values.forEach(value => {
-      html += /* html */`<button class="btn">${value}</button> `;
+    values.forEach((value, index) => {
+      html += /* html */`<button class="btn" id="${this.ids[index]}">${value}</button> `;
     });
     return html;
   }

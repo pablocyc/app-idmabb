@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@stylelint/postcss-css-in-js': ^0.38.0
+  chart.js: ^3.9.1
   eslint: ^8.22.0
   eslint-config-standard: 17.0.0-1
   eslint-plugin-import: ^2.26.0
@@ -14,12 +15,13 @@ specifiers:
   postcss-nesting: ^10.1.10
   postcss-styled: ^0.34.0
   postcss-syntax: ^0.36.2
-  stylelint: 14.9.0
+  stylelint: 14.11.0
   stylelint-config-standard: ^27.0.0
   vite: ^3.0.7
 
 devDependencies:
   '@stylelint/postcss-css-in-js': 0.38.0_wuc352kuwbjfwnfzykq4fs3caq
+  chart.js: 3.9.1
   eslint: 8.22.0
   eslint-config-standard: 17.0.0-1_efb6sn33jnpcnzrbo6wi2hd2o4
   eslint-plugin-import: 2.26.0_eslint@8.22.0
@@ -32,8 +34,8 @@ devDependencies:
   postcss-nesting: 10.1.10_postcss@8.4.16
   postcss-styled: 0.34.0_wuc352kuwbjfwnfzykq4fs3caq
   postcss-syntax: 0.36.2_o2f3e2cw44a5qcrxztmazyri5y
-  stylelint: 14.9.0
-  stylelint-config-standard: 27.0.0_stylelint@14.9.0
+  stylelint: 14.11.0
+  stylelint-config-standard: 27.0.0_stylelint@14.11.0
   vite: 3.0.7
 
 packages:
@@ -572,11 +574,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /clone-regexp/2.2.0:
-    resolution: {integrity: sha512-beMpP7BOtTipFuW8hrJvREQ2DrRu3BE7by0ZpibtfBA+qfHYvMGTc2Yb1JMYPKg/JUw0CHYvpg796aNTSW9z7Q==}
-    engines: {node: '>=6'}
-    dependencies:
-      is-regexp: 2.1.0
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
     dev: true
 
   /color-convert/1.9.3:
@@ -1289,13 +1288,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /execall/2.0.0:
-    resolution: {integrity: sha512-0FU2hZ5Hh6iQnarpRtQurM/aAvp3RIbfvgLHrcqJYzhXyV2KFruhuChf9NC6waAhiUR7FFtlugkI4p7f2Fqlow==}
-    engines: {node: '>=8'}
-    dependencies:
-      clone-regexp: 2.2.0
-    dev: true
-
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
@@ -1449,11 +1441,6 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
-    dev: true
-
-  /get-stdin/8.0.0:
-    resolution: {integrity: sha512-sY22aA6xchAzprjyqmSEQv4UbAAzRN0L2dQB0NlN5acTTK9Don6nhoc3eAbUnpZiCANAMfd/+40kVdKfFygohg==}
-    engines: {node: '>=10'}
     dev: true
 
   /get-symbol-description/1.0.0:
@@ -1773,11 +1760,6 @@ packages:
     dependencies:
       call-bind: 1.0.2
       has-tostringtag: 1.0.0
-    dev: true
-
-  /is-regexp/2.1.0:
-    resolution: {integrity: sha512-OZ4IlER3zmRIoB9AqNhEggVxqIH4ofDns5nRrPS6yQxXE1TPCUpFznBfRQmQa8uC+pXqjMnukiJBxCisIxiLGA==}
-    engines: {node: '>=6'}
     dev: true
 
   /is-shared-array-buffer/1.0.2:
@@ -2569,25 +2551,25 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-recommended/9.0.0_stylelint@14.9.0:
+  /stylelint-config-recommended/9.0.0_stylelint@14.11.0:
     resolution: {integrity: sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==}
     peerDependencies:
       stylelint: ^14.10.0
     dependencies:
-      stylelint: 14.9.0
+      stylelint: 14.11.0
     dev: true
 
-  /stylelint-config-standard/27.0.0_stylelint@14.9.0:
+  /stylelint-config-standard/27.0.0_stylelint@14.11.0:
     resolution: {integrity: sha512-J+wxyODWQCW2kgdhVzj51a4cFcJkglkMQrjPU/1Jo8w2oKSKK5ZRqHvDDWxEmjYWIYbMhhIMS5dOgVpGUMIACw==}
     peerDependencies:
       stylelint: ^14.10.0
     dependencies:
-      stylelint: 14.9.0
-      stylelint-config-recommended: 9.0.0_stylelint@14.9.0
+      stylelint: 14.11.0
+      stylelint-config-recommended: 9.0.0_stylelint@14.11.0
     dev: true
 
-  /stylelint/14.9.0:
-    resolution: {integrity: sha512-+xsQ4uKS56RQs8AGYx2CXc9nhWyPR7c/G0RqyiKgWZx2LuE3VJnIhGRQXUfnGQXOqBPHxNjMCHiK5NNQRB52sw==}
+  /stylelint/14.11.0:
+    resolution: {integrity: sha512-OTLjLPxpvGtojEfpESWM8Ir64Z01E89xsisaBMUP/ngOx1+4VG2DPRcUyCCiin9Rd3kPXPsh/uwHd9eqnvhsYA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -2597,11 +2579,9 @@ packages:
       cosmiconfig: 7.0.1
       css-functions-list: 3.1.0
       debug: 4.3.4
-      execall: 2.0.0
       fast-glob: 3.2.11
       fastest-levenshtein: 1.0.16
       file-entry-cache: 6.0.1
-      get-stdin: 8.0.0
       global-modules: 2.0.0
       globby: 11.1.0
       globjoin: 0.1.4
@@ -2630,7 +2610,7 @@ packages:
       svg-tags: 1.0.0
       table: 6.8.0
       v8-compile-cache: 2.3.0
-      write-file-atomic: 4.0.1
+      write-file-atomic: 4.0.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2848,9 +2828,9 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /write-file-atomic/4.0.1:
-    resolution: {integrity: sha512-nSKUxgAbyioruk6hU87QzVbY279oYT6uiwgDoujth2ju4mJ+TZau7SQBhtbTmUyuNYTuXnSyRn66FV0+eCgcrQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
+  /write-file-atomic/4.0.2:
+    resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
